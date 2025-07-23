@@ -1,0 +1,89 @@
+.footer
+    margin-top: 50px
+    padding: 30px 0 36px
+    border-top: 1px solid $white
+    .container
+        gap: 49px 20px
+
+    .logo
+        margin: 0 0 29px
+
+    &-contacts
+        gap: 4px 0
+        &__link
+            gap: 10px
+
+            font-family: 'Philosopher', sans
+            font-weight: 700
+            font-size: 16px
+            line-height: 100%
+
+            &:hover
+                color: $prime
+                .ic
+                    fill: $prime
+
+    &-nav
+        &__link
+            display: block
+
+            font-weight: 400
+            font-style: Regular
+            font-size: 14px
+            line-height: 100%
+            margin-bottom: 30px
+            &:last-child
+                margin-bottom: 0
+
+            &:hover
+                color: $prime
+                .ic
+                    fill: $prime
+
+    &-btns
+        gap: 14px
+        &>*
+            width: 100%
+
+    &-bottom
+        font-weight: 300
+        font-size: 14px
+        line-height: 20px
+        width: 100%
+
+    @media screen and ( max-width: 991px )
+        .container
+            max-width: 400px
+            gap: 37px
+            --cont-pad: 9px
+
+        .logo
+            margin: 0
+            max-width: 156px
+
+        &-contacts
+            &__link
+                font-size: 14px
+
+        &-col
+            display: flex
+            align-items: center
+            width: 100%
+            justify-content: space-between
+            margin-bottom: 3px
+
+        &-nav
+            &__link
+                font-size: 12px
+                line-height: 15px
+                margin-bottom: 10px
+        &-btns
+            width: 100%
+
+        &-bottom
+            font-size: 12px
+            line-height: 15px
+            text-align: center
+
+    @media screen and ( max-width: 720px )
+        padding: 14px 0 17px

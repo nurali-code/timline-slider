@@ -1,0 +1,134 @@
+/* Slider */
+
+.slick
+    &-list
+        position: relative
+        // overflow: hidden
+        display: flex
+
+        margin: 0
+        padding: 0
+
+        &:focus
+            outline: none
+
+        &.dragging
+            cursor: pointer
+            cursor: hand
+
+    &-slider
+        position: relative
+        // overflow: hidden
+        display: block
+        box-sizing: border-box
+        -webkit-touch-callout: none
+        user-select: none
+        touch-action: pan-y
+        -webkit-tap-highlight-color: transparent
+        left: 0
+
+        width: 100%
+        position: relative
+
+        .slick-track,
+        .slick-list
+            -webkit-transform: translate3d(0, 0, 0)
+            -moz-transform: translate3d(0, 0, 0)
+            -ms-transform: translate3d(0, 0, 0)
+            -o-transform: translate3d(0, 0, 0)
+            transform: translate3d(0, 0, 0)
+
+    &-track
+        position: relative
+        left: 0
+        top: 0
+        // height: 100%
+        display: flex
+        margin-left: auto
+        margin-right: auto
+
+        &:before,
+        &:after
+            content: ""
+            display: table
+
+        &:after
+            clear: both
+
+        .slick-loading &
+            visibility: hidden
+
+    &-slide
+        float: left
+        height: 100%
+        margin: 0
+        min-height: 1px
+        transition: all ease .3s
+        margin: 0 8px
+        // [dir="rtl"] &
+        //     float: right
+
+        img
+            display: block
+
+        &.slick-loading img
+            display: none
+
+        &.dragging img
+            pointer-events: none
+
+        .slick-loading &
+            visibility: hidden
+
+        .slick-vertical &
+            // display: block
+            height: auto
+
+    &-arrow.slick-hidden
+        display: none
+
+    &-arrow
+        color: rgba(0, 0, 0, 0)
+        width: 52px
+        z-index: 111
+        height: 52px
+        border-radius: 50%
+        background-repeat: no-repeat
+        background-position: center center
+        background-size: contain
+        box-shadow: 0px 2px 18px 2px #0000000A
+        // position: absolute
+        // bottom: 100%
+        // right: 31px
+        &.slick-disabled
+            opacity: .2
+
+    &-next
+        background-image: url('../img/arrow-r.svg')
+
+    &-prev
+        background-image: url('../img/arrow-l.svg')
+        right: 93px
+
+    &-dots
+        z-index: 111
+        display: flex
+        align-items: center
+        // position: absolute
+        gap: 10px
+        // height: 52px
+        // bottom: 100%
+        // right: 229px
+        li
+            line-height: 0
+            font-size: 0
+            color: rgba(0, 0, 0, 0)
+            background-color: #18274E
+            width: 10px
+            height: 10px
+            border-radius: 50%
+            line-height: 0
+            opacity: .2
+
+            &.slick-active
+                opacity: 1

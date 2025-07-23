@@ -1,0 +1,84 @@
+.modal
+    position: fixed
+    top: 0
+    left: 0
+    height: 100%
+    width: 100vw
+    z-index: 99999
+    background-color: rgba(var(--black), .5)
+    padding: 20px
+    box-sizing: border-box
+    overflow-y: scroll
+    transition: all ease .4s
+
+    opacity: 0
+    visibility: hidden
+
+    &-content
+        min-height: 100px
+        display: block
+        background-color: $bg
+        transition: transform ease .4s
+        margin: auto !important
+        position: absolute
+        top: 50%
+        left: 50%
+        max-width: 689px
+        width: calc(100% - 40px)
+        padding: 50px 60px
+        transform: translate(-50%, -40%)
+        border-radius: 20px
+
+    &__close
+        position: absolute
+        top: 20px
+        right: 20px
+        display: block
+        cursor: pointer
+        .ic
+            width: 32px
+            height: 32px
+
+    &__heading
+        font-size: 40px
+        font-weight: 500
+        line-height: 1.2
+        margin: 0 0 15px
+        color: #000
+
+    &__descr
+        font-size: 20px
+        font-weight: 500
+        line-height: 1.366
+        margin: 0 auto 40px
+        color: #000
+
+    .btn
+        min-width: 331px
+        margin: 0 auto
+
+    &.active
+        opacity: 1
+        visibility: visible
+        & > *
+            transform: translate(-50%, -50%)
+
+    @media screen and (max-width: 720px)
+        &-content
+            padding: 35px 20px
+
+        &__close
+            top: 10px
+            right: 10px
+
+        &__heading
+            font-size: 32px
+            margin-bottom: 10px
+
+        &__descr
+            font-size: 16px
+            margin-bottom: 20px
+
+        .btn
+            width: 100%
+            min-width: 100%
