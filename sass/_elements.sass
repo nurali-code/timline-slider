@@ -7,17 +7,10 @@
 
 :root
     --prime: #18274E
-    --main: #3D1000
     --white: #fff
     --black: #000
     --dark: #111111
-    --green: #25A163
-    --red: #E61717
     --bg: #fff
-    --fz: 1.25rem
-    --cont: 1320px
-    --cont-pad: 20px
-    --padd: 20px
 
 $alfa: rgba(0, 0, 0, 0)
 $prime: var(--prime)
@@ -33,7 +26,7 @@ html
     scroll-behavior: smooth
 
 body, html
-    font-family: "Raleway", sans-serif
+    font-family: "Roboto", sans-serif
     font-weight: 400
     font-style: normal
     font-optical-sizing: auto
@@ -47,36 +40,10 @@ body
     &.active
         overflow: hidden
 
-.container
-    max-width: var(--cont)
-    width: calc( 100% - var(--cont-pad) * 2 )
-    margin: 0 auto
-
 img
     display: block
     max-width: 100%
 
-h1, h2
-    font-family: 'Philosopher', sans
-    font-weight: 700
-    margin: 0 0 20px
-
-a, button, p, ul, ol
-    font-family: inherit
-    font-weight: 600
-    font-size: var(--fz)
-    line-height: 130%
-    letter-spacing: calc( var(--fz) * -0.02 )
-
-p
-    font-weight: 300
-    font-size: 14px
-    line-height: 20px
-    &.--lg
-        font-size: 20px
-        line-height: 26px
-    &:last-child
-        margin-bottom: 0
 
 a,
 button
@@ -92,201 +59,3 @@ button
 
 ul
     list-style: none
-
-[class^=fx-], [class*=" fx-"], .btn, body, .fx, .wrapper
-    display: flex
-
-.fx-col, body
-    flex-direction: column
-
-.fx-ac, .btn
-    align-items: center
-
-.fx-as, .wrapper
-    align-items: flex-start
-
-.fx
-    &-jc
-        justify-content: center
-
-    &-je
-        justify-content: flex-end
-
-    &-w
-        flex-wrap: wrap
-
-    &-jb
-        justify-content: space-between
-
-    &-ae
-        align-items: end
-
-.wrapper
-    --gap: 63px
-    --first: 242px
-    gap: var(--gap)
-    &__img
-        width: 100%
-        object-fit: cover
-        position: relative
-        z-index: 111
-
-    &>*
-        &:first-child
-            width: var(--first)
-
-        &:last-child
-            width: calc( 100% - (var(--first) + var(--gap) ))
-
-    &.--reverce
-        &>*
-            &:first-child
-                width: calc( 100% - (var(--first) + var(--gap) ))
-
-            &:last-child
-                width: var(--first)
-
-label
-    display: block
-    line-height: 100%
-
-input
-    font-weight: 500
-    --fz: 1.25rem
-    font-size: var(--fz)
-    line-height: 110%
-    letter-spacing: calc( var(--fz) * -0.02 )
-
-    border: 2px solid #80D4FF
-    height: 64px
-    border-radius: 12px
-    width: 100%
-    padding: 0 14px
-    background-color: #F4F4F5
-    &:focus
-        border-color: $black
-
-    &::placeholder
-        color: #9E9EAB
-
-.tb
-    @media screen and ( max-width: 1300px )
-        &-hide
-            display: none
-    @media screen and ( min-width: 1300px )
-        &-show
-            display: none
-
-.mob
-    @media screen and ( max-width: 720px )
-        &-hide
-            display: none
-    @media screen and ( min-width: 720px )
-        &-show
-            display: none
-
-section
-    overflow: hidden
-    padding: 50px 0
-    @media screen and ( max-width: 1199px )
-        padding: 40px 0
-    @media screen and ( max-width: 992px )
-        padding: 30px 0
-
-@media screen and ( max-width: 1439px )
-    :root
-        --fz: 1rem
-        --cont: 1260px
-        --padd: 10px
-
-@media screen and ( max-width: 1199px )
-    h1,.h1
-        font-size: 50px
-
-    h2,.h2
-        font-size: 30px
-        margin-bottom: 35px
-
-    h3,.h3
-        font-size: 22px
-
-    .wrapper
-        --gap: 53px
-
-@media screen and ( max-width: 991px )
-    :root
-        --padd: 0px
-
-    h1,.h1
-        font-size: 40px
-
-    h2,.h2
-        font-size: 30px
-        margin-bottom: 25px
-
-    h3,.h3
-        font-size: 18px
-
-    .wrapper
-        --first: 200px
-        --gap: 40px
-        &>*
-            &:first-child
-
-    .btn
-        &-wrap
-            gap: 30px
-            .container
-                gap: 30px
-
-@media screen and ( max-width: 720px )
-    .wrapper
-        display: block
-        &>*
-            width: 100% !important
-
-        &__img
-            display: none
-
-    p
-        font-size: 12px
-        line-height: 15px
-
-    h1,.h1
-        font-size: 25px
-
-    h2,.h2
-        margin-bottom: 20px
-        font-size: 24px
-
-    h3,.h3
-        font-size: 16px
-
-    .btn
-        gap: 8px
-        width: 100%
-        font-size: 12px
-        line-height: 14px
-        &-line
-            &::after
-                content: ''
-                display: block
-                transition: .4s ease all
-                background-color: $white
-                width: var(--cont-pad)
-                height: 1px
-                position: absolute
-                // top: 50%
-                right: 100%
-                // transform: translateY(20px)
-
-        &-wrap
-            .container
-                .btn-line
-                    &::after
-                        left: 0
-                        right: auto
-
-[data-anim]
-    font-variant-numeric: tabular-nums
-    font-feature-settings: "tnum" 

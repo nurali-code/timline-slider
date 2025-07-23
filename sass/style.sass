@@ -49,6 +49,7 @@
         display: flex
         align-items: flex-end
         min-height: 360px
+        min-width: 426px
         width: 426px
         padding-bottom: 143px
 
@@ -64,6 +65,7 @@
             &::before
                 content: ''
                 width: 50vw
+                pointer-events: none
                 height: 100%
                 position: absolute
                 bottom: 0
@@ -102,9 +104,21 @@
     &-img
         margin: 0
         width: 100%
+        &:not(:first-child)
+            display: none
+
         img
             width: 100%
             display: block
+
+    &-track
+        padding-left: 37%
+        overflow: hidden
+
+    &-slider
+        display: flex
+        transition: transform 0.4s ease
+        will-change: transform
 
     @media screen and ( min-width: 1101px )
         &__text
@@ -166,9 +180,9 @@
                 padding: 0 !important
 
             &-prev
-                left: 20px
+                left: 16px
             &-next
-                right: 20px
+                right: 16px
             &-dots
                 display: none
 
@@ -177,7 +191,11 @@
 
         &-img
             img
-                aspect-ratio: 360/201
                 object-fit: cover
                 object-position: center center
                 aspect-ratio: 16/9
+
+    @media screen and ( max-width: 700px )
+        &-img
+            img
+                aspect-ratio: 360/201
