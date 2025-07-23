@@ -94,7 +94,9 @@
         transition: .3s ease all
 
     &-images
-        width: 100%
+        display: flex
+        transition: transform 0.4s ease
+        will-change: transform
         .slick
             &-list
                 padding: 0 !important
@@ -103,9 +105,8 @@
 
     &-img
         margin: 0
+        min-width: 100%
         width: 100%
-        &:not(:first-child)
-            display: none
 
         img
             width: 100%
@@ -113,6 +114,9 @@
 
     &-track
         padding-left: 37%
+        overflow: hidden
+
+    &-list 
         overflow: hidden
 
     &-slider
@@ -172,6 +176,7 @@
 
         &-track 
             padding-left: 0
+
         .slick
             &-arrow
                 top: 40%
