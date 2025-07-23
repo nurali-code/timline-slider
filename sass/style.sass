@@ -120,14 +120,11 @@
         position: relative
         z-index: 1
         overflow: hidden
-        .btn 
+        .btn
             position: absolute
-            left: 30px 
+            left: 30px
             bottom: 121px
             z-index: 111
-
-    &-list
-        overflow: hidden
 
     &-slider
         display: flex
@@ -162,6 +159,20 @@
         &-track
             .slick-arrow
                 display: none
+
+         &-list
+            &::after
+                content: ''
+                display: block
+                position: absolute
+                bottom: 44px
+                left: 42%
+                transform: translateX(-50%)
+                width: 100px
+                height: 100px
+                backdrop-filter: blur(4px)
+                background-color: rgba(#86BC25, .7)
+                z-index: 11
 
     @media screen and ( max-width: 1100px )
         &-row
@@ -221,9 +232,8 @@
         &-controls
             display: none
 
-        .btn 
-            margin: 30px auto 0  
-
+        .btn
+            margin: 30px auto 0
 
     @media screen and ( max-width: 700px )
         &-img
