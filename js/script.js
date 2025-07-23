@@ -39,7 +39,7 @@ $slider.on('afterChange', function (event, slick, currentSlide) {
 });
 
 
-$('.slick-dots li').eq(0).addClass('active');
+$('.slick-dots li').eq(0).addClass('slick-active');
 $('.timeline-images').slick({
     arrows: false,
     infinite: false,
