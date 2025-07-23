@@ -11,12 +11,15 @@ document.addEventListener("DOMContentLoaded", function () {
         const offset = -(itemWidth * currentIndex);
         slider.style.transform = `translateX(${offset}px)`;
 
-        // Удаляем старые классы
+        // Обновляем классы .slick-current
         items.forEach(item => item.classList.remove('slick-current'));
-        // Добавляем новый активный
         if (items[currentIndex]) {
             items[currentIndex].classList.add('slick-current');
         }
+
+        // Управление состоянием кнопок
+        prevBtn.classList.toggle('slick-disabled', currentIndex === 0);
+        nextBtn.classList.toggle('slick-disabled', currentIndex === items.length - 1);
     }
 
     nextBtn.addEventListener('click', function () {
