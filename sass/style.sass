@@ -110,19 +110,28 @@
 
         img
             width: 100%
+            aspect-ratio: 1440/324
+            object-fit: cover
+            object-position: center bottom
             display: block
 
     &-track
         padding-left: 37%
+        position: relative
+        z-index: 1
         overflow: hidden
-        .slick-arrow 
-            display: none
+        .btn 
+            position: absolute
+            left: 30px 
+            bottom: 121px
+            z-index: 111
 
-    &-list 
+    &-list
         overflow: hidden
 
     &-slider
         display: flex
+
         transition: transform 0.4s ease
         will-change: transform
 
@@ -150,6 +159,10 @@
                         opacity: 1
                         transform: translateY(0%)
 
+        &-track
+            .slick-arrow
+                display: none
+
     @media screen and ( max-width: 1100px )
         &-row
             display: block
@@ -160,9 +173,10 @@
 
         &-item
             display: block
+            min-width: 100%
             width: 100%
             min-height: unset
-            padding: 0 16px 130px
+            padding: 0 16px 160px
             background-image: url('../img/line-ac.svg'), url('../img/lines-mob.svg')
             background-position: bottom left 70px, bottom left
 
@@ -176,13 +190,13 @@
         &__text
             margin-bottom: 50px
 
-        &-track 
+        &-track
             padding-left: 0
 
         .slick
             &-arrow
-                top: 40%
-                transform: translateY(-50%)
+                top: auto
+                bottom: 160px
                 position: absolute
 
             &-list
@@ -203,6 +217,13 @@
                 object-fit: cover
                 object-position: center center
                 aspect-ratio: 16/9
+
+        &-controls
+            display: none
+
+        .btn 
+            margin: 30px auto 0  
+
 
     @media screen and ( max-width: 700px )
         &-img
