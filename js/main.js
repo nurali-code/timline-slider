@@ -76,11 +76,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     updateSlider(); // Начальная инициализация
+    // Перерасчёт при изменении размера экрана
+    let resizeTimeout;
+    window.addEventListener('resize', function () {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(updateSlider, 200);
+    });
 });
 
-// Перерасчёт при изменении размера экрана
-let resizeTimeout;
-window.addEventListener('resize', function () {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(updateSlider, 200);
-});
